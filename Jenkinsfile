@@ -22,7 +22,7 @@ pipeline {
 		stage('Docker Build Teena') {
             steps{
                 script{
-                    sh 'docker build -t Teena2396/teenajenkinsmavenproject .'
+                    sh 'docker build -t teena2396/teenajenkinsmavenproject .'
                 }
             }
         }
@@ -40,7 +40,7 @@ pipeline {
             steps{
                 script{
  
-                    sh 'docker push Teena2396/teenajenkinsmavenproject'
+                    sh 'docker push teena2396/teenajenkinsmavenproject'
                 }
             }
   		}
