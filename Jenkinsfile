@@ -16,13 +16,13 @@ pipeline {
               //  sh "mvn -Dmaven.test.failure.ignore=true clean package"
 
                 // To run Maven on a Windows agent, use
-                 bat "mvn clean install"
+                 bat "mvn clean package"
             }
         }
 		stage('Docker Build Teena') {
             steps{
                 script{
-                    sh 'docker build -t teena2396/TeenaJenkinsMavenProject-0.0.1-SNAPSHOT .'
+                    bat "docker build -t teena2396/TeenaJenkinsMavenProject-0.0.1-SNAPSHOT ."
                 }
             }
         }
