@@ -22,7 +22,7 @@ pipeline {
 		stage('Docker Build Teena') {
             steps{
                 script{
-                    bat "docker build -t teena2396/TeenaJenkinsMavenProject-0.0.1-SNAPSHOT ."
+                    bat "docker build -t teena2396/teenajenkinsmavenproject-0.0.1-snapshot ."
                 }
             }
         }
