@@ -26,6 +26,26 @@ pipeline {
                 }
             }
         }
+		    stage('Docker Login'){
+            steps{
+                script{
+ 
+                    withCredentials([usernamePassword(credentialsId: 'dockerhubid', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    sh 'docker login --username ${USERNAME} --password ${PASSWORD}'
+                    }
+                }
+            }
+  		}
+  		stage('DockerHub Push'){
+            steps{
+                script{
+ 
+                    sh 'docker push teena2396/teenajenkinsmavenproject-0.0.1-snapshot'
+                }
+            }
+  		}
+	}
+		
 		 
     }
 }
