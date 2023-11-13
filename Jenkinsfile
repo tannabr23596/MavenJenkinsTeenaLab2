@@ -22,27 +22,10 @@ pipeline {
 		stage('Docker Build Teena') {
             steps{
                 script{
-                    sh 'docker build -t teena2396/teenajenkinsmavenproject .'
+                    sh 'docker build -t teena2396/TeenaJenkinsMavenProject-0.0.1-SNAPSHOT .'
                 }
             }
         }
-		 stage('Docker Login Teena'){
-            steps{
-                script{
- 
-                    withCredentials([usernamePassword(credentialsId: 'dockerhubid', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                    sh 'docker login --username ${USERNAME} --password ${PASSWORD}'
-                    }
-                }
-            }
-  		}
-		stage('DockerHub Push Teena'){
-            steps{
-                script{
- 
-                    sh 'docker push teena2396/teenajenkinsmavenproject'
-                }
-            }
-  		}
+		 
     }
 }
