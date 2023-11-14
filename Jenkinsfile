@@ -26,7 +26,7 @@ pipeline {
                 }
             }
         }
-		    stage('Docker Login Teena'){
+		    stage('Docker Login Teenas'){
             steps{
                 script{
  
